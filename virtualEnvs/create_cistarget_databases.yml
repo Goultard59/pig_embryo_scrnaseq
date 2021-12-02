@@ -1,0 +1,13 @@
+name: create_cistarget_databases
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.8
+  - pyarrow
+  - numpy=1.19.5
+  - pandas=1.2.1
+  - numba
+  - python-flatbuffers
+prefix: /work/adufour/anaconda3/envs/create_cistarget_databases

@@ -1,0 +1,25 @@
+name: liana_env
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python
+  - tk
+  - ca-certificates
+  - libffi
+  - sqlite
+  - wheel
+  - libgcc-ng
+  - libstdcxx-ng
+  - openssl
+  - zlib
+  - certifi
+  - pip
+  - readline
+  - libedit
+  - ncurses
+  - ld_impl_linux-64
+  - setuptools
+  - xz
+prefix: /work/adufour/anaconda3/envs/liana_env
