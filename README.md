@@ -1,24 +1,26 @@
 # pig_embryo_scrnaseq
 
-## Generating matrices
+## About
+This repository contains all scripts to reproduce the results from the paper "".
 
-Contains the codes needed to make the pig reference for CellRanger and the code to make the count matrice from the FASTQ file.
+## Overview
 
-## Preprocessing
 
-Contains the Jupyter Notebook used in order to make the quality controls of each embryos states.
+## Abstract
 
-# Scenic
+## Repository
+The repository is structured as follows:
 
-Contains the different steps needed to have a SCENIC pigs database :
+- Ressource used for [matrice generation](1_generating_matrices)
+- Jupyter Notebook used for [secondary analysis](2_preprocessing/notebook)
+- Ressource used for [scenic](3_scenic)
+- Jupyter Notebook used for [Supplementary data](4_Generating_plot)
+- Script used for [Pathways analysis](5_Pathways_analysis)
+- Environnment used in [conda](virtualEnvs)
 
-1. The Transcription Factor list
-    - First run the script `transcription_factor.bash` with given matrice and the peptidique FASTA sequence.
-    - Second run the script `hmmer_filtering.R` with given output from previous script.
+## Links
+- Interactive [website]() to explore data online
+- Data can also be accessed at FAANG: 
 
-2. The motif to Transcription Factor annotation
-    - Run the script `orthologue_gene.bash` with the peptidique FASTA sequence from human and pigs.
-
-3. The gene motif ranking file
-    - First run the script `get_gene_fasta_ensembl.bash` with FASTA, annotation and karyotype from pigs.
-    - Second run the script `generate_feather.bash` Following [this instruction](https://github.com/aertslab/create_cisTarget_databases) Generate the gene motif ranking file from a database of motif and a database of FASTA sequence.
+## Questions
+For questions contact "adrien.dufour@inrae.fr"
