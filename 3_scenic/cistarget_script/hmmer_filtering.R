@@ -27,12 +27,8 @@ table_filtered_20 <- subset(table, V3 %in% filter_20 & V5 < 1e-20)
 filtered_table <- rbind(table_filtered_04, table_filtered_02, table_filtered_03, table_filtered_20)
 
 #Extract gene name
-gene_symbol <- str_match(new_tab$V19, "gene_symbol:\\s*(.*?)\\s*description")
-gene_name <- str_match(new_tab$V19, "gene:\\s*(.*?)\\s*transcript")
-
-filtered_table$gene <- ifelse(is.na(gene_symbol), gene_name[,2], gene_symbol[,2])[,2]
+gene_name <- str_match(filtered_table$V19, "gene:\\s*(.*?)\\s*\\.")
 
 #write TF list out
 #Other genes which are categorized at "Others" in AnimalTFdb have been manually added to this list
-write.table(unique(sort(ifelse(is.na(res), res2[,2], res[,2])[,2])), tflist_output, append = FALSE, sep = " ", dec = ".",
-            row.names = TRUE, col.names = TRUE)
+write.table(unique(sort(gene_name[,2])), tflist_output, append = FALSE, quote = FALSE, row.names = FALSE, col.names = FALSE)
