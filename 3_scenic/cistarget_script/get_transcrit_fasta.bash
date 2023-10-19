@@ -35,17 +35,17 @@ while read line; do
     end=`echo $ipart | cut -d'-' -f2`;
     strand=`echo $tpart | sed 's/)//'`;
     gene_name=`awk -v chr="$chr" -v start="$start" -v end="$end" -v strand="$strand" -F"\t" '($1 == chr && $4 == start && $5 == end && $7 == strand) {print $9}' ~/work/cistargetdb/file_feather_generation/gene_upstream_fix_$version.gtf`;
-    #si doublon
+    #If duplicate
     gene=`echo $gene_name | sed 's/.*gene_id\(.*\);/\1/' | sed 's/;.*//' | sed 's/ //g'  | sed 's/"//g'`;
     list_transcript=`grep $gene ~/work/cistargetdb/file_feather_generation/gene_upstream_fix_$version.gtf`
     if [[ `echo -e "$list_transcript" | wc -l` > 1 ]]; then
       count=`echo -e "$list_transcript" | awk -v chr="$chr" -v start="$start" -v end="$end" -v strand="$strand" -F"\t" '($1 == chr && $4 == start && $5 == end && $7 == strand) {print NR}'`
-      #si doublon
+      #If duplicate
       echo -e ">$gene#$count" ;
     else
       echo -e ">$gene";
     fi;
-  #affiche la sequence ACGT
+  #print ACGT sequence
   else 
     echo $line ;
     plop=1;
