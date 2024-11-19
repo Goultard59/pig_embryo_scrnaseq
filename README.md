@@ -22,6 +22,7 @@ The repository is structured as follows:
 ## Data
 - All raw sequencing data and associated metadata are available in FAANG Data portal (https://data.faang.org/home) and ENA under accession number PRJEB60517.
 - The mass spectrometry proteomics data have been deposited to the ProteomeXchange Consortium via the PRIDE[93] partner repository with the dataset identifier PXD042421.
+- Seurat objects are at available on Zenodo : https://zenodo.org/records/14185955
 
 ## Questions
 For questions contact "adrien.dufour@inrae.fr"
